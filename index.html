@@ -1,19 +1,576 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <style>
-        h1 {
-            text-align: center;
-        }
-    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163922640-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    <title>Zsolt Molnár's personal webpage</title>
-
+        gtag('config', 'UA-163922640-2');    
+    </script>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="zsomoTech - Zsolt Molnár's portfolio &amp; project website. Check my coding and electronics projects and research work." />
+    <meta name="author" content="zsomoTech - Zsolt Molnár" />
+    <title>zsomoTech - Zsolt Molnár's portfolio &amp; project website</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version) https://fontawesome.com/icons?d=gallery&m=free -->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Academicons (https://jpswalsh.github.io/academicons/) -->
+    <link rel="stylesheet" href="css/academicons.min.css" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@532&display=swap" rel="stylesheet">
 </head>
 
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.png" alt="Navigation bar logo - brand zsomoTech" /></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#page-top">Home</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contactme">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading branding">zsomoTech</div>
+            <div class="masthead-heading text-uppercase">Zsolt Molnár</div>
+            <div class="masthead-subheading">portfolio &amp; project website</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#contactme">Contact</a>
+        </div>
+    </header>
+    <!-- Abount me -->
+    <section class="page-section bg-light" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">About Me</h2>
+                <h3 class="section-subheading text-muted">
+                    I design and build things for the virtual and real world.
+                </h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <a class="nav-link js-scroll-trigger about-icons" href="#projects">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-laptop-code fa-stack-1x fa-inverse"></i>
+                        </a>
+                    </span>
+                    <h4 class="my-3">Coding</h4>
+                    <p class="text-muted">During my education, I self-taught microcontroller and computer programming as a side skill. Since then, I've worked on different programming projects that involved robotics, automation, and design.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <a class="nav-link js-scroll-trigger about-icons" href="#research">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-flask fa-stack-1x fa-inverse"></i>
+                        </a>
+                    </span>
+                    <h4 class="my-3">Research</h4>
+                    <p class="text-muted">During my university years, I participated in different developments at the Mechatronics Department. As a result, I authored and co-authored several research papers in robotics, system control, monitoring, and related topics.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <a class="nav-link js-scroll-trigger about-icons" href="#projects">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-robot fa-stack-1x fa-inverse"></i>
+                        </a>
+                    </span>
+                    <h4 class="my-3">Robotics</h4>
+                    <p class="text-muted">I got my BSc and MSc degrees in Mechatronics eng. because of my interest in robotics. To enrich my team management skills, I completed a Lean eng. and a Quality control eng. postgraduate training programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects ---------------------------------------------------------------------------------------------------------------------->
+    <section class="page-section bg-dark" id="projects">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Projects</h2>
+                <h3 class="section-subheading text-muted">
+                    An overview of my projects (non-exhaustive list)
+                </h3>
+            </div>
 
-<body>
-    <h1>Here will be a personal webpage soon...</h1>
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 mb-4">
+                    <div class="portfolio-item flex-container-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#project3DPath">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/projects/thumbnail_pathfinder.png" alt="Project thumbnail" />
+                        </a>
+                        <div class="portfolio-caption fill-height-item">
+                            <div class="portfolio-caption-heading">Online 3D Pathfinding Algorithm Visualization Tool</div>
+                            <div class="portfolio-caption-subheading text-muted"><br>VS Code&nbsp;&nbsp; ThreeJS&nbsp;&nbsp; jQuery&nbsp;&nbsp; Bootstrap&nbsp;&nbsp; bootstrap-slider.js&nbsp;&nbsp; HTML&nbsp;&nbsp; CSS&nbsp;&nbsp; JavaScript</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-12 mb-4">
+                    <div class="portfolio-item flex-container-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#projectMeasMod">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/projects/thumbnail_measurementMod.jpg" alt="Project thumbnail" />
+                        </a>
+                        <div class="portfolio-caption fill-height-item">
+                            <div class="portfolio-caption-heading">Measurement Modeling</div>
+                            <div class="portfolio-caption-subheading text-muted"><br>Visual Studio IDE&nbsp;&nbsp; .NET Framework&nbsp;&nbsp; C#</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-4 col-sm-12 mb-4">
+                    <div class="portfolio-item flex-container-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#projectMacroKeyboard">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/projects/thumbnail_macroKB.jpg" alt="Project thumbnail" />
+                        </a>
+                        <div class="portfolio-caption fill-height-item">
+                            <div class="portfolio-caption-heading">3D Printed Macro Keyboard</div>
+                            <div class="portfolio-caption-subheading text-muted"><br>Arduino&nbsp;IDE&nbsp;&nbsp; FreeCAD&nbsp;&nbsp; Autodesk&nbsp;EAGLE&nbsp;&nbsp; C++</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="text-center">
+                        <p class="text-muted">
+                            <br><br>
+                            Visit my
+                        </p>
+                        <a class="btn btn-dark btn-social mx-3" href="https://github.com/mzsoltmolnar" target="_balnk"><i class="fab fa-github fa-2x"></i>&nbsp;&nbsp;&nbsp;GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research grid  ------------------------------------------------------------------------------>
+    <section class="page-section bg-light" id="research">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Publications &amp; Conferences</h2>
+                <h3 class="section-subheading text-muted">An overview of publications and conferences I've participated
+                </h3>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 mb-4">
+                    <div class="portfolio-item flex-container-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#researchAccMon">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/research/thumbnail_precMon.jpg" alt="Research thumbnail" />
+                        </a>
+                        <div class="portfolio-caption fill-height-item">
+                            <div class="portfolio-caption-heading">Real-time accuracy monitoring system for industrial robot arms</div>
+
+                            <div class="portfolio-caption-subheading text-muted">
+                                <div class="text-center"><br>Publication &amp; Conference</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-12 mb-4">
+                    <div class="portfolio-item flex-container-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#researchControlSys">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/research/thumbnail_controlSys.jpg" alt="Research thumbnail" />
+                        </a>
+                        <div class="portfolio-caption fill-height-item">
+                            <div class="portfolio-caption-heading">Flexible control and monitoring system design initiative based on Industry 4.0 principles</div>
+                            <div class="portfolio-caption-subheading text-muted"><br>Publication &amp; Conference</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-12 mb-4">
+                    <div class="portfolio-item flex-container-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#researchPCSConf">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/research/thumbnail_PCS.jpg" alt="Research thumbnail" />
+                        </a>
+                        <div class="portfolio-caption fill-height-item">
+                            <div class="portfolio-caption-heading">Designing a flexibly applicable control system</div>
+                            <div class="portfolio-caption-subheading text-muted"><br>Conference</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-12 mb-4">
+                    <div class="portfolio-item flex-container-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#researchRemoteCNC">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/research/thumbnail_RemoteCNC.jpg" alt="Research thumbnail" />
+                        </a>
+                        <div class="portfolio-caption fill-height-item">
+                            <div class="portfolio-caption-heading">Remote controlled and monitored CNC developed for prototype component manufacturing</div>
+                            <div class="portfolio-caption-subheading text-muted"><br>Publication</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-12 mb-4">
+                    <div class="portfolio-item flex-container-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#researchElectricSkin">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/research/thumbnail_elecSkin.jpg" alt="Research thumbnail" />
+                        </a>
+                        <div class="portfolio-caption fill-height-item">
+                            <div class="portfolio-caption-heading">Heat-sensitive electric skin based on predictive temperature measurement</div>
+                            <div class="portfolio-caption-subheading text-muted"><br>Publication &amp; Conference</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="text-center">
+                        <p class="text-muted">
+                            <br><br>
+                            For a full list of publications, see my
+                        </p>
+                        <a class="btn btn-dark btn-social mx-3" href="https://scholar.google.com/citations?user=tEP5fzYAAAAJ&hl=en" target="_balnk"><i class="ai ai-google-scholar ai-2x"></i>&nbsp;&nbsp;&nbsp;Google Scholar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact me -->
+    <section class="page-section bg-dark" id="contactme">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Contact Me</h2>
+                <h3 class="section-subheading text-muted">Send me an e-mail, check my projects on GitHub, or connect with me on LinkedIn</h3>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="team-member">
+                        <a class="btn btn-dark btn-contact mx-5" href="mailto:mzsoltmolnar@outlook.com"><i class="fas fa-envelope fa-5x"></i></a>
+                        <a class="btn btn-dark btn-contact mx-5" href="https://github.com/mzsoltmolnar" target="_balnk"><i class="fab fa-github fa-5x"></i></a>
+                        <a class="btn btn-dark btn-contact mx-5" href="https://www.linkedin.com/in/zsolt-molnar" target="_balnk"><i class="fab fa-linkedin-in fa-5x"></i></a>
+                        <h2><br>Zsolt Molnár</h2>
+                    </div>
+                    <div class="empty_space">
+                        <!-- empty space -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">
+                        <!-- placeholder -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col text-center">Copyright © Zsolt Molnár 2020</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals-->
+    <!-- Project Modal 3D Pathfinder -->
+    <div class="portfolio-modal modal fade" id="project3DPath" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><i class="fas fa-times fa-2x"></i></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="modal-body">
+                                <h2>Online 3D Pathfinding Algorithm Visualization Tool</h2><br><br>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/projects/desc_pathfinder.png" alt="An image of the project" />
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <div id="playerPathfinderDemo"></div>
+                                </div>
+                                <br>
+                                <p>My goal with the project was to teach myself WebGL based graphics and related technologies. As a result, the application has an editable 3D environment, which permits the user to build his own obstacle course for pathfinding algorithms in a 3-dimensional space. The 3D editor enables moving the start and endpoints, adding/removing walls (obstacles), and resizing the 3D space available for the algorithm.</p>
+                                <p>Technologies:&nbsp;&nbsp; ThreeJS&nbsp;&nbsp; VS Code&nbsp;&nbsp; jQuery&nbsp;&nbsp; Bootstrap&nbsp;&nbsp; bootstrap-slider.js&nbsp;&nbsp; HTML&nbsp;&nbsp; CSS&nbsp;&nbsp; JavaScript</p>
+                                <a class="btn btn-dark btn-social mx-3" href="https://mzsoltmolnar.github.io/Visualization-tool-for-3D-pathfinding-algorithms/" target="_balnk"><i class="fas fa-globe fa-2x"></i> &nbsp;&nbsp;&nbsp;Online Demo</a>
+                                <a class="btn btn-dark btn-social mx-3" href="https://github.com/mzsoltmolnar/Visualization-tool-for-3D-pathfinding-algorithms" target="_balnk"><i class="fab fa-github fa-2x"></i>&nbsp;&nbsp;&nbsp;Code</a>
+                                <br><br><br>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal Measurement Modeling-->
+    <div class="portfolio-modal modal fade" id="projectMeasMod" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><i class="fas fa-times fa-2x"></i></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="modal-body">
+                                <h2>Measurement Modeling</h2><br><br>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/projects/desc_measurementMod.jpg" alt="An image of the project" />
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <div id="playerMeasurementMod"></div>
+                                </div>
+                                <p><br>Because of the lockdown caused by COVID-19 outbreak, the university labs were closed, where the industrial sensor measurements were carried out. To overcome this challenge, I began to work on a set of .NET framework-based applications, which are intended to model the behavior of the real measurement setup. The output values are generated using actual measurement data with random noise generation. Each interface has an image of the measurement setup, which illustrates the physical arrangement of the devices.</p>
+                                <p>Technologies:&nbsp;&nbsp; Visual Studio IDE&nbsp;&nbsp; .NET Framework&nbsp;&nbsp; C#</p>
+                                <a class="btn btn-dark btn-social mx-3" href="https://github.com/mzsoltmolnar/Measurement-Modeling" target="_balnk"><i class="fab fa-github fa-2x"></i>&nbsp;&nbsp;&nbsp;Code &amp; Bin</a>
+                                <br><br><br>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal Macro Keyboard -->
+    <div class="portfolio-modal modal fade" id="projectMacroKeyboard" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><i class="fas fa-times fa-2x"></i></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="modal-body">
+                                <h2>3D Printed Macro Keyboard</h2><br><br>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/projects/desc_macroKB.jpg" alt="An image of the project" />
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <div id="playerMacroKeyboard"></div>
+                                </div>
+                                <p><br>A Pro Micro board based, 3D printed, triple-layout macro keyboard with mechanical switches (Arduino IDE programmable). The Pro Micro board emulates an HID device which grants cross-platform and cross-device compatibility without requiring additional software.</p>
+                                <p>Technologies:&nbsp;&nbsp; Arduino&nbsp;IDE&nbsp;&nbsp; FreeCAD&nbsp;&nbsp; Autodesk&nbsp;EAGLE&nbsp;&nbsp; C++</p>
+                                <a class="btn btn-dark btn-social mx-3" href="https://github.com/mzsoltmolnar/3D-printed-macro-keyboard" target="_balnk"><i class="fab fa-github fa-2x"></i>&nbsp;&nbsp;&nbsp;Code</a>
+                                <br><br><br>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Research Modal Accuracy Monitoring -->
+    <div class="portfolio-modal modal fade" id="researchAccMon" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><i class="fas fa-times fa-2x"></i></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="modal-body">
+                                <h2>Real-time accuracy monitoring system for industrial robot arms</h2><br><br>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/research/desc_precMon.jpg" alt="A picture of the research" />
+                                <p>The core of the system is a software developed in the lab, which compares the robot's preprogrammed paths with the momentary one. As a result, we get an absolute difference, which then is compared against a reference value. The reference value is the threshold for different warning levels.</p>
+                                <p class="item-intro text-muted">The paper was presented at the Annual Session of Scientific Papers - IMT&nbsp;Oradea&nbsp;2019 international conference.</p>
+                                <p>Open Access - PDF published by IOP Publishing Ltd</p>
+                                <a class="btn btn-dark btn-social mx-5" href="https://iopscience.iop.org/article/10.1088/1757-899X/568/1/012068" target="_balnk"><i class="ai ai-open-access ai-2x"></i>&nbsp;&nbsp;&nbsp;Full PDF</a>
+                                <br><br><br>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Research Modal 2-->
+    <div class="portfolio-modal modal fade" id="researchControlSys" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><i class="fas fa-times fa-2x"></i></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="modal-body">
+                                <h2>Flexible control and monitoring system design initiative based on Industry&nbsp;4.0 principles</h2><br><br>
+                                <img class="img-fluid d-block mx-auto img-with-caption" src="assets/img/research/desc_contSys_HMI.jpg" alt="A picture of the research" />
+                                <p class="item-intro text-muted">The UI running on a touchscreen-enabled HMI</p>
+                                <img class="img-fluid d-block mx-auto img-with-caption" src="assets/img/research/desc_contSys_devices.jpg" alt="A picture of the research" />
+                                <p class="item-intro text-muted">The four different control module</p>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <div id="playerControlSystem"></div>
+                                </div><br>
+                                <p>The project is a design initiative, which outlines the main requirements for a flexible and modular control system design from software and hardware perspectives. At the same time, the basics of Industry 4.0 are taken into account. As a result, the system prototype was built and tested by the creators and Mechatronics Engineer students as part of their classes. The system includes a UI and control logic, which runs on a touchscreen-enabled HMI. The hardware part consists of four different purpose Wi-Fi enabled control module.</p>
+                                <p class="item-intro text-muted">The paper was presented at the 3rd International Symposium on Small-scale Intelligent Manufacturing Systems (SIMS&nbsp;2020) international conference.</p>
+                                <p>PDF published by IEEE</p>
+                                <a class="btn btn-dark btn-social mx-5" href="https://www.ntnu.edu/ieee-sims-2020" target="_balnk"><i class="fas fa-globe fa-2x"></i>&nbsp;&nbsp;&nbsp;Conference Website</a>
+                                <a class="btn btn-dark btn-social mx-5" href="https://ieeexplore.ieee.org/document/9121409" target="_balnk"><i class="ai ai-closed-access ai-2x"></i>&nbsp;&nbsp;&nbsp;IEEE</a>
+                                <br><br><br>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Research Modal 3-->
+    <div class="portfolio-modal modal fade" id="researchPCSConf" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><i class="fas fa-times fa-2x"></i></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="modal-body">
+                                <h2>Designing a flexibly applicable control system</h2><br><br>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/research/desc_PCS.jpg" height="50%" width="50%" alt="PCS Conference logo" />
+                                <p>The conference presentation topic was a network-connected control system developed at the Department of Mechatronics. With wireless technology, the devices (production cell components) equipped with the in-house developed control modules can connect to a central computer. With a touch-enabled HMI, the users can redefine the connections and behavior of the controlled devices. The wireless connectivity is an essential feature for the Laboratory because it permits the production cell's reconfiguration fast and easy between educational and research activities.</p>
+                                <p class="item-intro text-muted">The development was presented at the Process Control System 2019 (PCS&nbsp;2019) international conference.</p>
+                                <p>PCS 2019 conference website</p>
+                                <a class="btn btn-dark btn-social mx-5" href="http://pcsmeeting.hu/PCS2019/en/" target="_balnk"><i class="fas fa-globe fa-2x"></i>&nbsp;&nbsp;&nbsp;Conference Website</a>
+                                <br><br><br>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Research Modal 4-->
+    <div class="portfolio-modal modal fade" id="researchRemoteCNC" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><i class="fas fa-times fa-2x"></i></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="modal-body">
+                                <h2>Remote controlled and monitored CNC developed for prototype component manufacturing</h2><br><br>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/research/cont_RemoteCNC.jpg" alt="A picture of the research" />
+                                <p>The development's main challenge was that we needed to design the CNC using components mostly available in a bigger hardware store. Also, the CNC frame must be sturdy enough to execute smaller machining jobs. The second challenging part was the design of the control system. This was based on a Raspberry Pi single-board computer and an Arduino board as a G-code interpreter and physical I/O interface.</p>
+                                <p>Published in Recent Innovations in Mechatronics</p>
+                                <a class="btn btn-dark btn-social mx-5" href="https://ojs.lib.unideb.hu/rIim/article/view/3817" target="_balnk"><i class="fas fa-globe fa-2x"></i>&nbsp;&nbsp;&nbsp;PDF</a>
+                                <br><br><br>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Research Modal 5-->
+    <div class="portfolio-modal modal fade" id="researchElectricSkin" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><i class="fas fa-times fa-2x"></i></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="modal-body">
+                                <h2>Heat-sensitive electric skin based on predictive temperature measurement</h2><br><br>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/research/desc_elecSkin.jpg" alt="A picture of the research" />
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <div id="playerElectricSkin"></div>
+                                </div><br>
+                                <p>The goal was to create a skin-like surface with similar heat-sensing capabilities as a human skin. Thereby it can distinguish the tangible temperature objects from hot ones. We achieved this functionality by applying the predictive temperature measurement principle to off the shelf, low heat capacity, and cheap temperature sensors mounted on a flexible PCB. The prototype was a 2 x 2 sensor matrix. The resulted concept can be applied to humanoid robot arms, prosthetic arms, and other fields where robot-human interactions happen.</p>
+                                <p class="item-intro text-muted">The development was presented at the InterTalent Unideb 2016 international conference.</p>
+                                <p>Full publication on PDF page 117</p>
+                                <a class="btn btn-dark btn-social mx-5" href="http://detep.unideb.hu/sites/default/files/upload_documents/intertalent_online_kiadvany_vegleges.pdf" target="_balnk"><i class="fas fa-globe fa-2x"></i>&nbsp;&nbsp;&nbsp;PDF</a>
+                                <br><br><br>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- YouTube IFrame API -->
+    <script src="js/youtubeApi.js"></script>
 </body>
 
 </html>
