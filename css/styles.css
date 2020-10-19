@@ -105,6 +105,14 @@
     flex: 1;
 }
 
+.simple-link, .simple-link:visited {
+    color: #14676D;
+}
+
+.simple-link:hover, .simple-link:focus {
+    color: #2cceda;
+}
+
 /* END Own styles - ADDED */
 
 *, *::before, *::after {
