@@ -9234,8 +9234,8 @@ img::-moz-selection {
 }
 
 #mainNav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     background-color: #212529;
 }
 
@@ -9258,7 +9258,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand img {
-    height: 1.5rem;
+    height: 2.5rem;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -9277,8 +9277,8 @@ img::-moz-selection {
 
 @media (min-width: 992px) {
     #mainNav {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         border: none;
         background-color: transparent;
         transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
@@ -9288,7 +9288,7 @@ img::-moz-selection {
         transition: font-size 0.3s ease-in-out;
     }
     #mainNav .navbar-brand img {
-        height: 2rem;
+        height: 3rem;
         transition: height 0.3s ease-in-out;
     }
     #mainNav.navbar-shrink {
@@ -9300,7 +9300,7 @@ img::-moz-selection {
         font-size: 1.25em;
     }
     #mainNav.navbar-shrink .navbar-brand svg, #mainNav.navbar-shrink .navbar-brand img {
-        height: 1.5rem;
+        height: 2.5rem;
     }
     #mainNav .navbar-nav .nav-item {
         margin-right: 1rem;
