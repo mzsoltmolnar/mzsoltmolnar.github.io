@@ -38,6 +38,16 @@ function onYouTubeIframeAPIReady() {
         playerMacroKeyboard.pauseVideo();
     });
 
+    // image processing demo
+    playerImageProcessing = new YT.Player("playerImageProcessing", {
+        class: "embed-responsive-item",
+        videoId: "b-23MQEgfEY",
+    });
+
+    $("#projectImageProcessing").on("hide.bs.modal", function (e) {
+        playerImageProcessing.pauseVideo();
+    });
+
     // control system demo
     playerControlSystem = new YT.Player("playerControlSystem", {
         class: "embed-responsive-item",
