@@ -41,7 +41,7 @@ function onYouTubeIframeAPIReady() {
     // image processing demo
     playerImageProcessing = new YT.Player("playerImageProcessing", {
         class: "embed-responsive-item",
-        videoId: "b-23MQEgfEY",
+        videoId: "akm5mnIMP9c",
     });
 
     $("#projectImageProcessing").on("hide.bs.modal", function (e) {
