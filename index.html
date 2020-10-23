@@ -4,13 +4,13 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163922640-2"></script>
-    <script>
+    <!-- <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-163922640-2');    
-    </script>
+    </script>-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="zsomoTech - Zsolt Molnár's portfolio &amp; project website. Check my coding and electronics projects and research work." />
@@ -30,7 +30,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@532&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    .loading-ring-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #0d0d0d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lds-dual-ring {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+    }
+
+    .lds-dual-ring:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 8px solid #fff;
+        border-color: #2df1ff transparent #2df1ff transparent;
+        animation: lds-dual-ring 1s linear infinite;
+    }
+
+    @keyframes lds-dual-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
 <body id="page-top">
+    <div class="loading-ring-wrapper">
+        <div class="lds-dual-ring"></div>
+    </div>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
@@ -613,6 +658,12 @@
     <script src="js/scripts.js"></script>
     <!-- YouTube IFrame API -->
     <script src="js/youtubeApi.js"></script>
+
+    <script>
+        $(window).on("DOMContentLoaded", function () {
+            $(".loading-ring-wrapper").fadeOut("slow");
+        });
+    </script>
 </body>
 
 </html>
