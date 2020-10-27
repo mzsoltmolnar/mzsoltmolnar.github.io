@@ -14,6 +14,9 @@ $(document).ready(function () {
         else if (targetModal == "projectRoboControl") {
             $("#projectImageProcessing").modal("show");
         }
+        else if (targetModal == "projectRoboCompetitions") {
+            $("#projectRobotCompetition").modal("show");
+        }
 
         // research links
         else if (targetModal == "researchMonitoring") {
