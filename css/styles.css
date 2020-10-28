@@ -106,11 +106,15 @@
 }
 
 .simple-link, .simple-link:visited {
-    color: #14676D;
+    color: #2197a0;
+    text-decoration: underline;
+    font-style: italic;
 }
 
 .simple-link:hover, .simple-link:focus {
     color: #2cceda;
+    text-decoration: underline;
+    font-style: italic;
 }
 
 /* END Own styles - ADDED */
