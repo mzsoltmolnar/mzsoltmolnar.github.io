@@ -40,43 +40,53 @@ $(document).ready(function () {
     }
 
     // Project
-    $("#project3DPath").on("hide.bs.modal", changeUrlToIndex);
+    $("#project3DPath").on("hide.bs.modal", changeUrlToProjects);
     $("#project3DPath").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#projectPathfinder");});
 
-    $("#projectRandomnessTester").on("hide.bs.modal", changeUrlToIndex);
+    $("#projectRandomnessTester").on("hide.bs.modal", changeUrlToProjects);
     $("#projectRandomnessTester").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#projectRandomnessTester");});
 
-    $("#projectMeasMod").on("hide.bs.modal", changeUrlToIndex);
+    $("#projectMeasMod").on("hide.bs.modal", changeUrlToProjects);
     $("#projectMeasMod").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#projectModeling");});
 
 
-    $("#projectMacroKeyboard").on("hide.bs.modal", changeUrlToIndex);
+    $("#projectMacroKeyboard").on("hide.bs.modal", changeUrlToProjects);
     $("#projectMacroKeyboard").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#projectKeyboard");});
 
-    $("#projectImageProcessing").on("hide.bs.modal", changeUrlToIndex);
+    $("#projectImageProcessing").on("hide.bs.modal", changeUrlToProjects);
     $("#projectImageProcessing").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#projectRoboControl");});
 
-    $("#projectRobotCompetition").on("hide.bs.modal", changeUrlToIndex);
+    $("#projectRobotCompetition").on("hide.bs.modal", changeUrlToProjects);
     $("#projectRobotCompetition").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#projectRoboCompetitions");});
 
 
     // Research
-    $("#researchAccMon").on("hide.bs.modal", changeUrlToIndex);
+    $("#researchAccMon").on("hide.bs.modal", changeUrlToResearch);
     $("#researchAccMon").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#researchMonitoring");});
 
-    $("#researchControlSys").on("hide.bs.modal", changeUrlToIndex);
+    $("#researchControlSys").on("hide.bs.modal", changeUrlToResearch);
     $("#researchControlSys").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#researchControlSys");});
 
-    $("#researchPCSConf").on("hide.bs.modal", changeUrlToIndex);
+    $("#researchPCSConf").on("hide.bs.modal", changeUrlToResearch);
     $("#researchPCSConf").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#researchFlexibleControlSys");});
 
-    $("#researchRemoteCNC").on("hide.bs.modal", changeUrlToIndex);
+    $("#researchRemoteCNC").on("hide.bs.modal", changeUrlToResearch);
     $("#researchRemoteCNC").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#researchRemoteCNC");});
 
-    $("#researchElectricSkin").on("hide.bs.modal", changeUrlToIndex);
+    $("#researchElectricSkin").on("hide.bs.modal", changeUrlToResearch);
     $("#researchElectricSkin").on("show.bs.modal", function () {window.history.replaceState(null, "", "/#researchElectricSkin");});
 
-    function changeUrlToIndex() {
-        window.history.replaceState(null, "", "/index.html");
+    function changeUrlToProjects() {
+        window.history.replaceState(null, "", "#projects");
     }
+
+    function changeUrlToResearch() {
+        window.history.replaceState(null, "", "#research");
+    }
+
+    $("[href$='#page-top']").on("click", function () {window.history.replaceState(null, "", "/#page-top");});
+    $("[href$='#about']").on("click", function () {window.history.replaceState(null, "", "/#about");});
+    $("[href$='#projects']").on("click", function () {window.history.replaceState(null, "", "/#projects");});
+    $("[href$='#research']").on("click", function () {window.history.replaceState(null, "", "/#research");});
+    $("[href$='#contactme']").on("click", function () {window.history.replaceState(null, "", "/#contactme");});
 });
