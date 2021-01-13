@@ -18,6 +18,16 @@ function onYouTubeIframeAPIReady() {
         playerPathfinderDemo.pauseVideo();
     });
 
+    // randomness tester demo
+    playerRandomnessTester = new YT.Player("playerRandomnessTester", {
+        class: "embed-responsive-item",
+        videoId: "v5oBoQTpg_E",
+    });
+
+    $("#projectRandomnessTester").on("hide.bs.modal", function (e) {
+        playerRandomnessTester.pauseVideo();
+    });
+
     // measurement modeling demo
     playerMeasurementMod = new YT.Player("playerMeasurementMod", {
         class: "embed-responsive-item",
