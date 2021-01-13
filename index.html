@@ -3,14 +3,15 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163922640-2"></script>
+  <!--  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163922640-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-163922640-2');    
-    </script>
+    </script>-->
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="zsomoTech - Zsolt Molnár's portfolio &amp; project website. Check my coding and electronics projects and research work." />
@@ -158,6 +159,8 @@
             </div>
 
             <div class="row">
+
+                <!-- Pathfinder visualizer -->
                 <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item flex-container-item">
                         <a class="portfolio-link" data-toggle="modal" href="#project3DPath">
@@ -173,6 +176,23 @@
                     </div>
                 </div>
 
+                <!-- Random bitstream tester -->
+                <div class="col-lg-4 col-sm-12 mb-4">
+                    <div class="portfolio-item flex-container-item">
+                        <a class="portfolio-link" data-toggle="modal" href="#projectRandomnessTester">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/projects/thumbnail_randTester.jpg" alt="Project thumbnail" />
+                        </a>
+                        <div class="portfolio-caption fill-height-item">
+                            <div class="portfolio-caption-heading">Bitstream Randomness Tester</div>
+                            <div class="portfolio-caption-subheading text-muted"><br>VS&nbsp;Code&nbsp;&nbsp; jQuery&nbsp;&nbsp; Bootstrap&nbsp;&nbsp; HTML&nbsp;&nbsp; CSS&nbsp;&nbsp; JavaScript</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Measurement modeling -->
                 <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item flex-container-item">
                         <a class="portfolio-link" data-toggle="modal" href="#projectMeasMod">
@@ -188,8 +208,7 @@
                     </div>
                 </div>
 
-
-
+                <!-- Macro keyboard -->
                 <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item flex-container-item">
                         <a class="portfolio-link" data-toggle="modal" href="#projectMacroKeyboard">
@@ -205,7 +224,7 @@
                     </div>
                 </div>
 
-
+                <!-- Image proc. robot control -->
                 <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item flex-container-item">
                         <a class="portfolio-link" data-toggle="modal" href="#projectImageProcessing">
@@ -221,6 +240,7 @@
                     </div>
                 </div>
 
+                <!-- Robot competitions -->
                 <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item flex-container-item">
                         <a class="portfolio-link" data-toggle="modal" href="#projectRobotCompetition">
@@ -396,6 +416,40 @@
 
     <!-- Modals-->
     <!-- Project Modal 3D Pathfinder -->
+    <div class="portfolio-modal modal fade" id="project3DPath" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal"><i class="fas fa-times fa-2x"></i></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="modal-body">
+                                <h2>Online 3D Pathfinding Algorithm Visualization Tool</h2><br><br>
+                                <img class="img-fluid d-block mx-auto" src="assets/img/projects/desc_pathfinder.png" alt="An image of the project" />
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <div id="playerPathfinderDemo"></div>
+                                </div>
+                                <br>
+                                <p>My goal with the project was to teach myself WebGL based graphics and related technologies. As a result, the application has an editable 3D environment, which permits the user to build his own obstacle course for pathfinding algorithms in a 3-dimensional space. The 3D editor enables moving the start and endpoints, adding/removing walls (obstacles), and resizing the 3D space available for the algorithm.</p>
+                                <p class="item-intro text-muted">The project was featured as a special mention in the AlgoExpert SWE project contest - Summer-Fall 2020:<br><a class="simple-link" href="https://www.algoexpert.io/swe-project-contests/2020-summer" target="_balnk"><u>https://www.algoexpert.io/swe-project-contests/2020-summer</u></a></p>
+                                <p>Technologies:&nbsp;&nbsp; ThreeJS&nbsp;&nbsp; VS Code&nbsp;&nbsp; jQuery&nbsp;&nbsp; Bootstrap&nbsp;&nbsp; bootstrap-slider.js&nbsp;&nbsp; HTML&nbsp;&nbsp; CSS&nbsp;&nbsp; JavaScript</p>
+                                <a class="btn btn-dark btn-social mx-3" href="https://mzsoltmolnar.github.io/Visualization-tool-for-3D-pathfinding-algorithms/" target="_balnk"><i class="fas fa-globe fa-2x"></i> &nbsp;&nbsp;&nbsp;Online Demo</a>
+                                <a class="btn btn-dark btn-social mx-3" href="https://github.com/mzsoltmolnar/Visualization-tool-for-3D-pathfinding-algorithms" target="_balnk"><i class="fab fa-github fa-2x"></i>&nbsp;&nbsp;&nbsp;Code</a>
+                                <br><br><br>
+                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <i class="fas fa-times mr-1"></i>
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bitstream Randomness Tester -->
     <div class="portfolio-modal modal fade" id="project3DPath" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
