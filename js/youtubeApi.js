@@ -58,6 +58,16 @@ function onYouTubeIframeAPIReady() {
         playerImageProcessing.pauseVideo();
     });
 
+    // accuracy monitoring demo
+    playerAccuracyMonitoring = new YT.Player("playerAccuracyMonitoring", {
+        class: "embed-responsive-item",
+        videoId: "c19JhXknD3o",
+    });
+
+    $("#researchAccMon").on("hide.bs.modal", function (e) {
+        playerAccuracyMonitoring.pauseVideo();
+    });
+    
     // control system demo
     playerControlSystem = new YT.Player("playerControlSystem", {
         class: "embed-responsive-item",
