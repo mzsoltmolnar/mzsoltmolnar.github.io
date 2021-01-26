@@ -64,8 +64,14 @@ function onYouTubeIframeAPIReady() {
         videoId: "aUTHqa-pE_0",
     });
 
+    playerControlSystemProgramming = new YT.Player("playerControlSystemProgramming", {
+        class: "embed-responsive-item",
+        videoId: "fG1ktTBb8qo",
+    });
+
     $("#researchControlSys").on("hide.bs.modal", function (e) {
         playerControlSystem.pauseVideo();
+        playerControlSystemProgramming.pauseVideo();
     });
 
     // electric skin demo
