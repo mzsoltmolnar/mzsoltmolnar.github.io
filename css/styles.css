@@ -82,6 +82,23 @@
     }
 }
 
+/* Animated masthead logo drawn over the hidden <img>, added by js/logoTilt.js */
+.logo-tilt {
+    position: relative;
+}
+
+/* overflow: visible lets the segments fly in from outside the logo's box */
+.logo-tilt-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    will-change: transform;
+}
+
 .img-with-caption {
     margin-bottom: 8px !important;
 }

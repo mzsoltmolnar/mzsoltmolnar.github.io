@@ -57,6 +57,10 @@ Within each grid, thumbnails share one aspect ratio so the cards line up: projec
   Unedited rules still use the template yellow `#fed136`, including plain `a`. Inline text links therefore use the `.simple-link` class.
 - **Branding assets:**
   - `assets/img/logo-static.svg`: the logo. It's used as the navbar logo, sized by `#mainNav .navbar-brand img` (3rem tall, or 2.5rem below 992px and once the navbar shrinks), as the SVG favicon, and above the masthead wordmark (`.masthead-logo`). There, `.masthead-brand` shrink-wraps the "zsomoTech" text and the logo stretches to its width (about 260×410px on desktop and 183×286px on phones). The masthead uses `min-height: 100vh`, so its background grows with the content.
+  - `js/logoTilt.js`: animates the masthead logo. It fetches `logo-static.svg` and draws it as an inline `.logo-tilt-svg` over the hidden `<img>`, which stays for layout and alt text.
+    - **Fly-in:** once the loading spinner is gone, the segments fly in and fade in. The `ENTRANCES` table sets each segment's direction and delay, keyed by the path ids (`bar-top`, `diag-upper`, …). The fly-in is skipped if the logo is out of view at load.
+    - **Tilt:** the whole logo then tilts toward the pointer (or a finger), with a dark sheen band sliding across it. It eases back flat while the pointer is below `.masthead-heading`.
+    - **Fallbacks:** the tuning constants sit at the top of the file. If the script fails, or the visitor prefers reduced motion, the static `<img>` shows instead.
   - `assets/img/favicon.ico`: a 75×75 fallback favicon rasterized from `logo-static.svg`, for browsers without SVG favicon support. Regenerate it if the logo changes.
   - `assets/img/header-bg.jpg`: the masthead background, set in `header.masthead`.
   - `.branding`: the class for the "zsomoTech" wordmark (Orbitron font).
