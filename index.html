@@ -17,7 +17,8 @@
     <meta name="description" content="zsomoTech - Zsolt Molnár's portfolio &amp; project website. Check my coding and electronics projects and research work." />
     <meta name="author" content="zsomoTech - Zsolt Molnár" />
     <title>zsomoTech - Zsolt Molnár's portfolio &amp; project website</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo-static.svg" />
     <!-- Font Awesome icons (free version) https://fontawesome.com/icons?d=gallery&m=free -->
     <link rel="stylesheet" href="css/all.min.css" />
     <!-- Academicons (https://jpswalsh.github.io/academicons/) -->
@@ -80,7 +81,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.png" alt="Navigation bar logo - brand zsomoTech" /></a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/logo-static.svg" alt="Navigation bar logo - brand zsomoTech" /></a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ml-1"></i>
@@ -99,7 +100,10 @@
     <!-- Masthead-->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading branding">zsomoTech</div>
+            <div class="masthead-brand">
+                <img class="masthead-logo" src="assets/img/logo-static.svg" alt="zsomoTech logo" />
+                <div class="masthead-subheading branding">zsomoTech</div>
+            </div>
             <div class="masthead-heading text-uppercase">Zsolt Molnár</div>
             <div class="masthead-subheading">portfolio &amp; project website</div>
             <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#contactme">Contact</a>
@@ -796,6 +800,8 @@
     <script src="js/youtubeApi.js"></script>
     <!-- Link a specific modal -->
     <script src="js/linkModal.js"></script>
+    <!-- Masthead logo fly-in and tilt -->
+    <script src="js/logoTilt.js"></script>
 
     <script>
         $(window).on("DOMContentLoaded", function () {

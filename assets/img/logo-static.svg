@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-330 -500 640 1000" width="640" height="1000" role="img" aria-label="Logo">
+  <g fill="#2DF1FF">
+    <path id="bar-top"    d="M -310,-490 H 290 V -470 L 210,-390 H -230 L -310,-470 Z"/>
+    <path id="diag-upper" d="M 50,-370 H 190 L -110,-70 H -250 Z"/>
+    <path id="bar-mid"    d="M -270,-50 H 250 L 290,-10 V 10 L 250,50 H -270 L -310,10 V -10 Z"/>
+    <path id="diag-lower" d="M 190,370 H 50 L -250,70 H -110 Z"/>
+    <path id="bar-bottom" d="M -230,390 H 210 L 290,470 V 490 H -310 V 470 Z"/>
+  </g>
+</svg>
