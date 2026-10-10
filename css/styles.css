@@ -61,6 +61,27 @@
     letter-spacing: 3px;
 }
 
+/* Shrink-wraps the wordmark so the logo can take its width */
+.masthead-brand {
+    display: table;
+    margin: 0 auto;
+}
+
+/* width: 0 keeps the logo out of the wrapper's sizing; min-width stretches it to the wordmark's width */
+.masthead-logo {
+    display: block;
+    width: 0;
+    min-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .masthead-logo {
+        margin-bottom: 1.5rem;
+    }
+}
+
 .img-with-caption {
     margin-bottom: 8px !important;
 }
@@ -9315,7 +9336,7 @@ img::-moz-selection {
 }
 
 header.masthead {
-    padding-top: 10.5rem;
+    padding-top: 7rem;
     padding-bottom: 6rem;
     text-align: center;
     color: #fff;
@@ -9325,7 +9346,7 @@ header.masthead {
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 header.masthead .masthead-subheading {
@@ -9347,8 +9368,8 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
     header.masthead {
-        padding-top: 17rem;
-        padding-bottom: 12.5rem;
+        padding-top: 7.5rem;
+        padding-bottom: 6rem;
     }
     header.masthead .masthead-subheading {
         font-size: 2.25rem;
