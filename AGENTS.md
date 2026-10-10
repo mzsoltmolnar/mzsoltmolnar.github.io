@@ -56,8 +56,8 @@ Within each grid, thumbnails share one aspect ratio so the cards line up: projec
 
   Unedited rules still use the template yellow `#fed136`, including plain `a`. Inline text links therefore use the `.simple-link` class.
 - **Branding assets:**
-  - `assets/img/navbar-logo.png`: sized by `#mainNav .navbar-brand img`. It's 3rem tall, or 2.5rem below 992px and once the navbar shrinks.
-  - `assets/img/favicon.ico`: the favicon.
+  - `assets/img/logo-static.svg`: the logo. It's used as the navbar logo, sized by `#mainNav .navbar-brand img` (3rem tall, or 2.5rem below 992px and once the navbar shrinks), and as the SVG favicon.
+  - `assets/img/favicon.ico`: a 75×75 fallback favicon rasterized from `logo-static.svg`, for browsers without SVG favicon support. Regenerate it if the logo changes.
   - `assets/img/header-bg.jpg`: the masthead background, set in `header.masthead`.
   - `.branding`: the class for the "zsomoTech" wordmark (Orbitron font).
 - **Loading spinner:** its CSS is an inline `<style>` in `index.html` between `</head>` and `<body>`. A script at the end of `<body>` fades it out.
