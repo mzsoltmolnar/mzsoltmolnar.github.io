@@ -1,6 +1,6 @@
 // Masthead background: a field of small dark pyramids on a canvas that open up in waves.
 // Waves ripple out behind the pointer (or a finger). Each pyramid a wave passes folds its four
-// faces open toward its edges, letting out a cyan glow and a spinning gem, then springs shut.
+// faces open toward its edges, letting out a cyan glow, then springs shut.
 // A click or tap sends a shockwave across the header, the logo sends one as it finishes flying in,
 // and while nobody points at the header a gentle ripple starts somewhere now and then.
 // Closed, the pyramids are shaded like the header's old background image. Without the canvas,
@@ -30,12 +30,12 @@
 
     // What an open pyramid shows
     var FLOOR = [2, 10, 12];
-    var GLOW_GAIN = 2;              // the glow is at full strength by 1/GLOW_GAIN open, so the cracks light up first
-    var GEM_SIZE = 0.24;            // half-diagonal of a full-grown gem, in cells
-    var GEM_DARK = [10, 70, 78];
-    var GEM_LIGHT = [205, 253, 255];
-    var LIGHT_ANGLE = -60;          // where the gem's light comes from, degrees on screen (-90 is straight up)
+    var GLOW_CURVE = 0.6;           // glow strength is openness to this power: below 1 lights the cracks up early,
+                                    // yet it keeps brightening until the pyramid is fully open
+    var CORE_SIZE = 0.32;           // radius of the bright core in a fully open pyramid, in cells; it grows
+                                    // with the opening and swells further while the faces overshoot
     var BLOOM = 0.16;               // cyan light an open pyramid spills onto its neighbors
+    var GLOW_PEAK = 0.35;           // scales all of the above light, so the cyan logo stays brighter than the background
     var BLOOM_RADIUS = 1.6;         // in cells
 
     // Each pyramid springs toward the openness the waves ask of it
@@ -49,16 +49,17 @@
     var WAVE_FRONT = 0.9;           // width of a wave's rising edge
     var WAVE_LENGTH = 4;
     var WAVE_FADED = 0.02;          // a wave is dropped once its front is weaker than this
-    var TRAIL = { amp: 1, reach: 4, speed: 9, tail: 0.8 };          // dropped along the pointer's path
+    var GENTLE = 0.6;               // the most that hovering or a drift opens a pyramid; only clicks open them fully
+    var TRAIL = { amp: GENTLE, reach: 4, speed: 9, tail: 0.8 };     // dropped along the pointer's path
     var TRAIL_SPACING = 2;          // in cells
-    var PULSE = { amp: 0.55, reach: 3.5, speed: 7, tail: 1.5 };     // repeats while the pointer rests on the header
+    var PULSE = { amp: GENTLE, reach: 3.5, speed: 7, tail: 1.5 };   // repeats while the pointer rests on the header
     var PULSE_EVERY = 1500;         // ms
     var SHOCK = { amp: 1.3, reach: 40, speed: 12, tail: 3.5 };      // a click or tap
     var INTRO = { amp: 1.1, reach: 30, speed: 11, tail: 3.5 };      // from the logo once it has flown in
     var INTRO_DELAY = 1600;         // ms after the loading screen is gone; matches the fly-in in js/logoTilt.js
-    var DRIFT = { amp: 0.6, reach: 5, speed: 7, tail: 2 };          // now and then while nobody points at the header
+    var DRIFT = { amp: GENTLE, reach: 5, speed: 7, tail: 2 };       // now and then while nobody points at the header
     var DRIFT_EVERY = [3000, 7000]; // ms, picked at random in this range
-    var SWELL = 0.3;                // openness right under a pointer
+    var SWELL = 0.3;                // openness right under a pointer, at most GENTLE
     var SWELL_RADIUS = 2.5;         // in cells
     var MAX_WAVES = 64;             // the oldest wave is dropped beyond this
     var TAP_SLOP = 10;              // px a finger may move for a touch to still count as a tap
@@ -74,16 +75,21 @@
 
     var CLOSED = CLOSED_ANGLE * Math.PI / 180;
     var OPEN = OPEN_ANGLE * Math.PI / 180;
-    var LIGHT = LIGHT_ANGLE * Math.PI / 180;
 
     // The closed field, drawn once per size; every frame copies the changed area back from it
     var base = document.createElement("canvas");
     var baseCtx = base.getContext("2d", { alpha: false });
     var glowSprite = makeSprite([
-        [0, "rgba(190, 252, 255, 0.95)"],
+        [0, "rgba(45, 241, 255, 0.95)"],
         [0.2, "rgba(45, 241, 255, 0.8)"],
         [0.55, "rgba(33, 151, 160, 0.25)"],
         [1, "rgba(20, 103, 109, 0)"]
+    ]);
+    var coreSprite = makeSprite([
+        [0, "rgba(45, 241, 255, 1)"],
+        [0.3, "rgba(45, 241, 255, 0.9)"],
+        [0.65, "rgba(45, 241, 255, 0.4)"],
+        [1, "rgba(45, 241, 255, 0)"]
     ]);
     var bloomSprite = makeSprite([
         [0, "rgba(45, 241, 255, 1)"],
@@ -412,8 +418,9 @@
                 var x = (edgesX[col] + edgesX[col + 1]) / 2;
                 var i = row * cols + col;
 
-                // Where waves overlap, the strongest wins, which keeps each ring distinct
-                var strongest = 0;
+                // Where waves overlap, the strongest wins. That keeps each ring distinct, and
+                // hovering never opens a pyramid further than its own waves do.
+                var target = 0;
                 for (var k = 0; k < waves.length; k++) {
                     var wave = waves[k];
                     var dx = x - wave.x;
@@ -430,18 +437,17 @@
                         var crest = Math.cos(Math.PI * behind / WAVE_LENGTH);
                         shape = Math.exp(-behind / wave.tail) * crest * crest;
                     }
-                    strongest = Math.max(strongest, wave.amp * Math.exp(-distance / wave.reach) * shape);
+                    target = Math.max(target, wave.amp * Math.exp(-distance / wave.reach) * shape);
                 }
-                var shut = 1 - Math.min(strongest, 1);
                 if (here) {
                     var px = x - here.x;
                     var py = y - here.y;
                     var near = Math.sqrt(px * px + py * py) / swellRadius;
                     if (near < 1) {
-                        shut *= 1 - SWELL * (0.5 + 0.5 * Math.cos(Math.PI * near));
+                        target = Math.max(target, SWELL * (0.5 + 0.5 * Math.cos(Math.PI * near)));
                     }
                 }
-                var target = 1 - shut;
+                target = Math.min(target, 1);
                 if (target < 0.002) {
                     target = 0;
                 }
@@ -518,7 +524,7 @@
         open.forEach(function (index) {
             var col = index % cols;
             var row = (index - col) / cols;
-            ctx.globalAlpha = Math.min(opens[index], 1) * BLOOM;
+            ctx.globalAlpha = Math.min(opens[index], 1) * BLOOM * GLOW_PEAK;
             ctx.drawImage(bloomSprite,
                 (edgesX[col] + edgesX[col + 1]) / 2 - spread, (edgesY[row] + edgesY[row + 1]) / 2 - spread,
                 spread * 2, spread * 2);
@@ -539,7 +545,7 @@
         };
     }
 
-    // One pyramid at the given openness: its floor, glow and gem, then its four faces on top
+    // One pyramid at the given openness: its floor, glow and core, then its four faces on top
     function drawCell(c, i, open) {
         var col = i % cols;
         var row = (i - col) / cols;
@@ -564,14 +570,15 @@
         c.fillRect(x0, y0, x1 - x0, y1 - y0);
 
         if (open > 0) {
-            c.globalAlpha = Math.min(open * GLOW_GAIN, 1);
+            c.globalAlpha = Math.pow(Math.min(open, 1), GLOW_CURVE) * GLOW_PEAK;
             c.drawImage(glowSprite, x0, y0, x1 - x0, y1 - y0);
-            c.globalAlpha = 1;
-            var grown = smoothstep(0.2, 1, open);
-            if (grown > 0) {
-                // Spins a quarter turn as it grows, ending up as a diamond
-                drawGem(c, cx, cy, GEM_SIZE * cell * grown, (1 - grown) * Math.PI / 2);
+            var core = smoothstep(0.1, 1, open) + Math.max(open - 1, 0);
+            if (core > 0) {
+                var radius = CORE_SIZE * cell * core;
+                c.globalAlpha = Math.min(core, 1) * GLOW_PEAK;
+                c.drawImage(coreSprite, cx - radius, cy - radius, radius * 2, radius * 2);
             }
+            c.globalAlpha = 1;
         }
 
         // Each face's tip pulls back from the center toward its own edge as the face tilts up
@@ -584,23 +591,6 @@
         triangle(c, grey(right * (1 + UPRIGHT_SHADE[1] * upright)), x1, y0, x1, y1, cx + w, cy);
         triangle(c, grey(bottom * (1 + UPRIGHT_SHADE[2] * upright)), x1, y1, x0, y1, cx, cy + h);
         triangle(c, grey(left * (1 + UPRIGHT_SHADE[3] * upright)), x0, y1, x0, y0, cx - w, cy);
-    }
-
-    // A four-faceted gem seen from above, lit from LIGHT_ANGLE
-    function drawGem(c, x, y, size, turn) {
-        for (var k = 0; k < 4; k++) {
-            var from = turn - Math.PI / 2 + k * Math.PI / 2;
-            var to = from + Math.PI / 2;
-            var lit = 0.5 + 0.5 * Math.cos(from + Math.PI / 4 - LIGHT);
-            lit *= lit;
-            triangle(c,
-                rgb(GEM_DARK[0] + (GEM_LIGHT[0] - GEM_DARK[0]) * lit,
-                    GEM_DARK[1] + (GEM_LIGHT[1] - GEM_DARK[1]) * lit,
-                    GEM_DARK[2] + (GEM_LIGHT[2] - GEM_DARK[2]) * lit),
-                x, y,
-                x + Math.cos(from) * size, y + Math.sin(from) * size,
-                x + Math.cos(to) * size, y + Math.sin(to) * size);
-        }
     }
 
     function triangle(c, color, ax, ay, bx, by, px, py) {
