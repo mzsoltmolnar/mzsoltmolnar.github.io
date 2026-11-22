@@ -9357,13 +9357,29 @@ header.masthead {
     padding-bottom: 6rem;
     text-align: center;
     color: #fff;
-    background-color: #0d0d0d;
-    background-image: url("../assets/img/header-bg.jpg");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    background-size: cover;
     min-height: 100vh;
+    position: relative;
+    /* Fallback for the canvas drawn by js/diamondWaves.js: the same pyramids, without the shading across the header */
+    --diamond: max(36px, 3.125vw, 5.5556vh);
+    background-color: #0d0d0d;
+    background-image: conic-gradient(from -45deg, #1b1b1b 0 25%, #111111 0 50%, #171717 0 75%, #010101 0);
+    background-size: var(--diamond) var(--diamond);
+    background-position: calc(50% + var(--diamond) / 2) 50%;
+}
+
+/* Behind the masthead content; js/diamondWaves.js draws on it */
+header.masthead .masthead-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+header.masthead > .container {
+    position: relative;
 }
 
 header.masthead .masthead-subheading {
